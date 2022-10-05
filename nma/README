@@ -1,0 +1,54 @@
+How to use Anisotropic Network Model (ANM):
+
+1/Compute the Hessian by nmanu.pl
+----------------------------------
+
+Hessian is the 3Nx3N matrix of second partial derivative of the potential energy with respect the coordinates. Only the elements with energy > 0 are printed.
+
+There are 2 ways of asigning K for K(d-d0)^2
+
+-The same for atoms within a cutoff-> $pablo=0
+-Depends on distance (Chacón mode) -> $pablo=1
+
+there is also the option of assigning a force cte for i+1
+$cabond=1 and $kbond=50
+
+perl nmanu.pl pdb hessian.dat
+
+The code parses CA
+
+
+2/Diagonalize the hessian.
+-----------------------------
+
+./diaghess
+
+Fortran code compiled for 500 atoms (re-compile if more)
+This compilation works in nd83
+
+With the execution you obtain 
+
+eigenvec.dat, Normal modes in format PCA-ptraj. The evals are now force constants (K=KbT/eval if switch to A^2)
+
+3/Generate a pseudo-trayectory using some relevant Modes
+
+perl mc-eigen.pl eigenvec.dat > file.proj
+
+$itot=50 -> number of modes
+
+This generates a file containing the dx for each mode.
+
+perl pca_anim_mc.pl
+usage:  pca_anim_mc.pl [-flags]
+Flags: -pdb reference (avg)
+       -evec eigenvectors file
+       -pout projected ASCII 'amber-crd-like' trajectory
+       -i input file (output from Montecarlo)
+       -n #vectors
+
+
+That's all folks!!
+
+
+Manu Rueda
+10/1/07 

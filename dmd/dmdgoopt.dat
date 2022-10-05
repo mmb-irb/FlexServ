@@ -1,0 +1,8 @@
+ &INPUT
+ ,FILE9='1gnd.avg.pdb' 
+ ,TSNAP=1.D-13
+ ,NBLOC=1000
+ ,TEMP=300
+ ,RCUTGO=8
+ ,RCA=0.5
+ &END

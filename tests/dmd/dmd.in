@@ -1,0 +1,11 @@
+ &INPUT
+  FILE9='../data/structure.ca.pdb',
+  TSNAP=1.D-12,
+  NBLOC=1000,
+  TEMP=300,
+  RCUTGO=8,
+  RCA=0.5,
+  SIGMA=0.05,
+  SIGMAGO=0.1,
+  KKK=2839,
+ &END
