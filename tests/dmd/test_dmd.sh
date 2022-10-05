@@ -1,1 +1,1 @@
-./../dmd/dmdgoopt < dmd.in
+../../dmd/dmdgoopt < dmd.in
