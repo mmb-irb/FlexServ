@@ -1,3 +1,3 @@
 #!/bin/bash
 
-"${FC}" -o dmdgoopt dmdgoopt.f -ffixed-line-length-none
+"${FC}" -o dmdgoopt dmdgoopt.f -ffixed-line-length-none -static-libgfortran
