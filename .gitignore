@@ -1,0 +1,6 @@
+.idea
+bd/bd
+dmd/dmd
+nma/nma
+*.o
+*.crd
